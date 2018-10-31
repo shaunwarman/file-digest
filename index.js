@@ -2,27 +2,24 @@ const crypto = require('crypto');
 const fs = require('fs');
 const { promisify } = require('util');
 
-const fsReadFile = promisify(fs.readFile);
-const fsStat = promisify(fs.stat);
-
 const ALGORITHMS = ['md5', 'sha1', 'sha256', 'sha512'];
 
-module.exports = async (filepath, algorithm = 'md5') => {
-  const file = await readFile(filepath);
+module.exports = (filepath, algorithm = 'md5') => {
+  const file = readFile(filepath);
   return hashFile(file, algorithm);
 };
 
-async function readFile(filepath) {
+function readFile(filepath) {
   if (typeof filepath !== 'string') {
     throw new TypeError('file path must be a string!');
   }
 
-  const stats = await fsStat(filepath);
+  const stats = fs.statSync(filepath);
   if (!stats.isFile()) {
     throw new Error(`${filepath} is not a file!`);
   }
 
-  const file = await fsReadFile(filepath);
+  const file = fs.readFileSync(filepath);
   return file;
 }
 

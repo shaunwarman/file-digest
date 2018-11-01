@@ -10,11 +10,14 @@
 
 > A simple file hasher
 
+
 ## Table of Contents
+
 * [Install](#install)
 * [Usage](#usage)
 * [Contributors](#contributors)
 * [License](#license)
+
 
 ## Install
 
@@ -43,14 +46,18 @@ console.log(digest(filepath, 'md5'));
 
 
 ## Contributors
+
 | Name             | Website                   |
 | ---------------- | ------------------------- |
-| **Shaun Warman** | <http://shaunwarman.com>  |
+| **Shaun Warman** | <https://shaunwarman.com> |
+
 
 ## License
+
 [MIT](LICENSE) © [Shaun Warman](https://shaunwarman.com)
 
-##
+
+## 
 
 [npm]: https://www.npmjs.com/
 

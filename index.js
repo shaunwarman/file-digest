@@ -1,6 +1,5 @@
 const crypto = require('crypto');
 const fs = require('fs');
-const { promisify } = require('util');
 
 const ALGORITHMS = ['md5', 'sha1', 'sha256', 'sha512'];
 

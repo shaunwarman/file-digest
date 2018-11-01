@@ -21,20 +21,21 @@ test('sha1', async t => {
 
 test('invalid file path', async t => {
   try {
-    const filepath = path.resolve(path.join(__dirname, 'fixtures', 'test.json'));
-    const hash = await fileDigest(10);
+    await fileDigest(10);
   } catch (err) {
-    t.true(err instanceof TypeError)
-    t.true(err.message.includes('file path must be a string!'))
+    t.true(err instanceof TypeError);
+    t.true(err.message.includes('file path must be a string!'));
   }
 });
 
 test('invalid algorithm', async t => {
   try {
-    const filepath = path.resolve(path.join(__dirname, 'fixtures', 'test.json'));
-    const hash = await fileDigest(filepath, 'not_an_algorithm');
+    const filepath = path.resolve(
+      path.join(__dirname, 'fixtures', 'test.json')
+    );
+    await fileDigest(filepath, 'not_an_algorithm');
   } catch (err) {
     t.true(err instanceof Error);
-    t.true(err.message.includes('is not a supported algorithm.'))
+    t.true(err.message.includes('is not a supported algorithm.'));
   }
 });

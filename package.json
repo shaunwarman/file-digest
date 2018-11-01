@@ -1,7 +1,7 @@
 {
   "name": "file-digest",
   "description": "A simple file hasher",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Shaun Warman <shaunwarman1@gmail.com> (https://shaunwarman.com)",
   "bugs": {
     "url": "https://github.com/shaunwarman/digest-file/issues",
